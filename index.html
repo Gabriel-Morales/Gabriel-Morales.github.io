@@ -4,7 +4,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: Roboto, sans-serif;
+            font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;;
         }
 
         header {
@@ -31,6 +31,7 @@
 
         main {
             padding: 20px;
+            margin-top: 20px;
         }
 
         header h1 {
@@ -38,6 +39,36 @@
             font-size: 24px; /* Adjust the size as needed */
             font-weight: bold;
             margin: 0; /* Remove default margin to ensure clean layout */
+        }
+
+
+        .top-hero-mask {
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            position: absolute; /* Position the top-hero absolutely */
+            top: 350px;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the top-hero */
+            width: 80%; /* Adjust the width as needed */
+            height: 45%;
+            box-shadow:  0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+            border: 3px solid transparent; /* Add a solid border */
+            border-image: linear-gradient(to right, #3498db, #1e3163); /* Apply a gradient to the border */
+            border-image-slice: 1; /* Ensure the whole border is covered by the gradient */
+        }
+
+        .top-hero {
+            background-color: #f5f5f7; /* Contrasting gray color */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            position: absolute; /* Position the top-hero absolutely */
+            top: 350px;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the top-hero */
+            width: 80%; /* Adjust the width as needed */
+            height: 45%;
+            box-shadow:  0 2px 30px 0 rgba(0, 0, 0, 0.3), 0 2px 30px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 0pt 2pt blue;
         }
         
     </style>
@@ -56,12 +87,14 @@
             <a href="#">About</a>
             <a href="#">Contact</a>
         </nav>
+        
+        
     </header>
+   
+     <div class="top-hero">
+            PLACEHOLDER - MIGHT CHANGE LATER
+     </div>
 
-    <main>
-        <h1>Hello, World!</h1>
-        <!-- Your content goes here -->
-    </main>
 
 </body>
 </html>

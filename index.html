@@ -14,7 +14,7 @@
         #container {
             display: flex;
             flex-direction: row;
-            align-items: center; /* Center cards horizontally */
+            align-items: flex-start; /* Center cards horizontally */
             justify-content: center; /* Center cards vertically */
             height: 45vh;
         }
@@ -85,7 +85,7 @@
                 flex-direction: column;
                 align-items: center; /* Center cards horizontally */
                 justify-content: center; /* Center cards vertically */
-                height: 45vh;
+                height: 65vh;
             }
 
 
@@ -95,10 +95,12 @@
 
             #left-card {
                 order: 3; /* Change the order of the left card on mobile */
+                width: 80%;
             }
 
             #right-card {
                 order: 2; /* Change the order of the right card on mobile */
+                width: 80%;
             }
         }
 
@@ -126,6 +128,7 @@
           margin: 0 auto;
           height: 100%;
           width: auto;
+          height: auto;
           justify-content: center;
           align-items: center;
         }

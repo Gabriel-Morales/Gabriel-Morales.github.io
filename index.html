@@ -6,6 +6,7 @@
     <title>Gabriel Morales - Portfolio</title>
     <style>
         
+        
         body {
             margin: 0;
             font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -26,6 +27,7 @@
             margin-right: 10px;
             padding-left: 10px;
             padding-right: 10px;
+           
         }
 
         #left-card {
@@ -57,14 +59,17 @@
 
 
         #tab-bar {
+            min-width: 2%;
+            min-height: 2%;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             align-items: center;
             background-color: #2c2c2e;
             position: fixed;
             bottom: 25px;
             width: 40%;
             padding: 10px 0;
+            margin-top: 10px;
             border-radius: 30px;
             transform: translateX(-50%);
             left: 50%;
@@ -109,6 +114,13 @@
         }
 
         @media (max-width: 900px) {
+            
+            .hamburger-icon {
+                display: flex; /* Show on smaller screens */
+                justify-content: left;
+                top: 2px;
+            }
+            
             #tab-bar {
                 width: 90%; /* Adjust width for smaller screens */
             }
@@ -135,6 +147,50 @@
             #right-card {
                 order: 2; /* Change the order of the right card on mobile */
                 width: 80%;
+            }
+            
+            .hamburger-icon {
+                height: 100px;
+                width: 100px;
+                display: flex; /* Hide by default on larger screens */
+                cursor: pointer;
+                padding: 10px;
+            }
+
+
+            .nav-menu {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav-item {
+                margin: 5px 0;
+            }
+
+            .nav-item a {
+                text-decoration: none;
+                color: #fff;
+                padding: 10px;
+                border-radius: 20px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            .nav-menu.show {
+                display: flex; /* Show when the hamburger icon is clicked */
+            }
+
+            #tab-bar {
+                display: none;
+            }
+
+            .tab {
+                display: none;
+            }
+
+            .selected-tab {
+                display: none;
             }
         }
 
@@ -166,12 +222,24 @@
           align-items: center;
         }
 
-    
+        .hamburger-icon {
+            display: none; /* Hide by default on larger screens */
+        }
+
+        .nav-menu {
+            display: none;
+        }
 
     </style>
 </head>
 <body>
     <div id="container">
+        <div class="hamburger-icon" onclick="toggleNavMenu()">☰</div>
+        <div class="nav-menu">
+            <div class="nav-item"><a href="#" class="tab selected-tab" onclick="changeTab(0)">Tab 1</a></div>
+            <div class="nav-item"><a href="#" class="tab" onclick="changeTab(1)">Tab 2</a></div>
+            <div class="nav-item"><a href="#" class="tab" onclick="changeTab(2)">Tab 3</a></div>
+        </div>
         <div id="left-card">
             <h2>Publication Index</h2>
             <p>This is a placeholder. Here goes my publications!</p>
@@ -200,6 +268,12 @@
 
             // Add 'selected-tab' class to the clicked tab
             document.querySelectorAll('.tab')[index].classList.add('selected-tab');
+
+        }
+
+        function toggleNavMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('show');
         }
     </script>
 </body>

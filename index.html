@@ -1,100 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;;
-        }
-
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid #e0e0e0;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav {
-            display: flex;
-            justify-content: flex-end; /* Align to the top right */
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 15px;
-        }
-
-        main {
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        header h1 {
-            color: #1E3163; /* Dark blue color */
-            font-size: 24px; /* Adjust the size as needed */
-            font-weight: bold;
-            margin: 0; /* Remove default margin to ensure clean layout */
-        }
-
-
-        .top-hero-mask {
-            padding: 20px;
-            border-radius: 10px; /* Rounded corners */
-            position: absolute; /* Position the top-hero absolutely */
-            top: 350px;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Center the top-hero */
-            width: 80%; /* Adjust the width as needed */
-            height: 45%;
-            box-shadow:  0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
-            border: 3px solid transparent; /* Add a solid border */
-            border-image: linear-gradient(to right, #3498db, #1e3163); /* Apply a gradient to the border */
-            border-image-slice: 1; /* Ensure the whole border is covered by the gradient */
-        }
-
-        .top-hero {
-            background-color: #f5f5f7; /* Contrasting gray color */
-            padding: 20px;
-            border-radius: 10px; /* Rounded corners */
-            position: absolute; /* Position the top-hero absolutely */
-            top: 350px;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Center the top-hero */
-            width: 80%; /* Adjust the width as needed */
-            height: 45%;
-            box-shadow:  0 2px 30px 0 rgba(0, 0, 0, 0.3), 0 2px 30px 0 rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0 0pt 2pt blue;
-        }
-        
-    </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: row;
+            align-items: center; /* Center cards horizontally */
+            justify-content: center; /* Center cards vertically */
+            height: 100vh;
+        }
+
+        #left-card, #right-card {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 10px; /* Add some margin between cards */
+            border-radius: 20px; /* Rounded corners */
+        }
+
+        #tab-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+            position: fixed;
+            bottom: 25px;
+            width: 40%;
+            padding: 10px 0;
+            border-radius: 30px;
+            transform: translateX(-50%);
+            left: 50%;
+            box-shadow: 0px 0px 0px 2.5px #6dd5ed;
+        }
+
+        .tab {
+            color: #ccc;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover {
+            color: #2193b0;
+        }
+
+        .selected-tab {
+            background: linear-gradient(to right, #2193b0, #6dd5ed);
+            color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-
-    <header>
-        <div>
-            <h1>Gabriel Morales</h1>
+    <div id="container">
+        <div id="left-card">
+            <h2>Left Card</h2>
+            <p> PLACEHOLDER .</p>
         </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-        
-        
-    </header>
-   
-     <div class="top-hero">
-            PLACEHOLDER - MIGHT CHANGE LATER
-     </div>
+        <div id="right-card">
+            <h2>Right Card</h2>
+            <p> PLACEHOLDER .</p>
+        </div>
+        <div id="tab-bar" class="pill">
+            <a href="#" class="tab selected-tab" onclick="changeTab(0)">Publications & About</a>
+            <a href="#" class="tab" onclick="changeTab(1)">Apps</a>
+            <a href="#" class="tab" onclick="changeTab(2)">Projects</a>
+            <a href="#" class="tab" onclick="changeTab(3)">CV</a>
+        </div>
+    </div>
 
+    <script>
+        function changeTab(index) {
+            // Remove 'selected-tab' class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('selected-tab');
+            });
 
+            // Add 'selected-tab' class to the clicked tab
+            document.querySelectorAll('.tab')[index].classList.add('selected-tab');
+        }
+    </script>
 </body>
 </html>

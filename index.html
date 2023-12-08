@@ -16,15 +16,29 @@
             flex-direction: row;
             align-items: center; /* Center cards horizontally */
             justify-content: center; /* Center cards vertically */
-            height: 100vh;
+            height: 45vh;
         }
 
-        #left-card, #right-card {
+        #left-card {
             width: 200px;
             background-color: #f0f0f0;
             padding: 20px;
             margin: 10px; /* Add some margin between cards */
-            border-radius: 20px; /* Rounded corners */
+            border-radius: 20px; 
+            align-items: center; 
+            justify-content: center;
+        }
+
+        #right-card {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 10px; /* Add some margin between cards */
+            border-radius: 20px; 
+            align-items: center; 
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
         }
 
         #tab-bar {
@@ -65,7 +79,29 @@
             #tab-bar {
                 width: 90%; /* Adjust width for smaller screens */
             }
+
+            #container {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center cards horizontally */
+                justify-content: center; /* Center cards vertically */
+                height: 45vh;
+            }
+
+
+            #container {
+                order: 1; /* Change the order of the container on mobile */
+            }
+
+            #left-card {
+                order: 3; /* Change the order of the left card on mobile */
+            }
+
+            #right-card {
+                order: 2; /* Change the order of the right card on mobile */
+            }
         }
+
         
         .selected-tab {
             background: linear-gradient(to right, #2193b0, #6dd5ed);
@@ -73,6 +109,27 @@
             background-clip: text;
             font-weight: bold;
         }
+
+
+        .image-cropper {
+          width: 100px;
+          height: 100px;
+          position: relative;
+          overflow: hidden;
+          border-radius: 50%;
+          justify-content: center;
+          align-items: center;
+        }
+
+        img {
+          display: flex;
+          margin: 0 auto;
+          height: 100%;
+          width: auto;
+          justify-content: center;
+          align-items: center;
+        }
+
     </style>
 </head>
 <body>
@@ -82,7 +139,10 @@
             <p>This is the left card content.</p>
         </div>
         <div id="right-card">
-            <h2>Right Card</h2>
+            <div class="image-cropper">
+                <img src="profilepic.jpg">
+            </div>
+            <h2>Gabriel Morales</h2>
             <p>This is the right card content.</p>
         </div>
         <div id="tab-bar" class="pill">

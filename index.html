@@ -153,6 +153,57 @@
         }
 
 
+        @media(max-height: 760px) {
+            #tab-bar {
+                display: none;
+            }
+
+             .hamburger-icon {
+                display: flex;
+                cursor: pointer;
+                margin-top: -36px;
+                margin-bottom: -36px;
+                left: 1rem;
+                position: absolute;
+                top: 1rem;
+           
+               
+            }
+
+
+            .nav-menu {
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                width: 100%;
+                position: relative;
+                margin: 0px;
+            }
+
+            .nav-item {
+                margin: 5px 0;
+            }
+
+            .nav-item a {
+                text-decoration: none;
+                color: #fff;
+                padding: 10px;
+                border-radius: 20px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            .nav-menu.show {
+                display: flex; /* Show when the hamburger icon is clicked */
+            }
+            .tab {
+                display: none;
+            }
+
+            .selected-tab {
+                display: none;
+            }
+        }
+
         @media (max-width: 980px) {
             
             #tab-bar {

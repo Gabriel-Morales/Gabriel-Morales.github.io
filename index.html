@@ -384,9 +384,15 @@
             <a href="#" class="tab" onclick="changeTab(1)">Apps</a>
             <a href="#" class="tab" onclick="changeTab(2)">Projects</a>
             <a href="#" class="tab" onclick="changeTab(3)">CV</a>
+            <a href="#" class="tab" onclick="showPrivacyPol()">Application Privacy Policy</a>
         </div>
     </div>
 
+    <div id="privacy" class="tabcontent">
+      <h2>Privacy Policy</h2>
+      <p>Welcome to my basic privacy policy. Privacy is a fundamental part of the apps I create; currently all of my applications do not collect any user data with my knowledge or purposeful implementation. I use only native APIs on a per-platform basis unless otherwise, and explicitly stated.</p>
+    </div>
+    
     <script>
         function changeTab(index) {
             // Remove 'selected-tab' class from all tabs
@@ -402,6 +408,16 @@
         function toggleNavMenu() {
             const navMenu = document.querySelector('.nav-menu');
             navMenu.classList.toggle('show');
+        }
+
+
+        function showPrivacyPol() {
+            var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          document.getElementById("privacy").style.display = "block";
         }
     </script>
 </body>

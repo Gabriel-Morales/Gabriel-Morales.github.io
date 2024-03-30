@@ -9,7 +9,9 @@
 
         
         
-
+        .privacy-container {
+            padding: 20px; /* Add padding around the content */
+          }
         
         body {
             margin: 0;
@@ -410,8 +412,10 @@
 
         function showPrivacyPol() {
           document.body.innerHTML = `
+          <div class="privacy-container">
           <h2>Privacy Policy</h2>
           <p>Welcome to my basic privacy policy. Privacy is a fundamental part of the apps I create; currently all of my applications do not collect any user data with my knowledge or purposeful implementation. I use only native APIs on a per-platform basis unless otherwise, and explicitly stated.</p>
+          </div>
           `;
         }
     </script>

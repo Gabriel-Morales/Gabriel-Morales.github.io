@@ -384,7 +384,7 @@
             <a href="#" class="tab" onclick="changeTab(1)">Apps</a>
             <a href="#" class="tab" onclick="changeTab(2)">Projects</a>
             <a href="#" class="tab" onclick="changeTab(3)">CV</a>
-            <a href="#" class="tab" onclick="showPrivacyPol()">Application Privacy Policy</a>
+            <a href="#" class="tab" onclick="showPrivacyPol()">Privacy Policy</a>
         </div>
     </div>
 
@@ -412,12 +412,12 @@
 
 
         function showPrivacyPol() {
-            var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+          var privacyTab = document.getElementById("privacy");
+          if (privacyTab.style.display === "block") {
+            privacyTab.style.display = "none";
+          } else {
+            privacyTab.style.display = "block";
           }
-          document.getElementById("privacy").style.display = "block";
         }
     </script>
 </body>
